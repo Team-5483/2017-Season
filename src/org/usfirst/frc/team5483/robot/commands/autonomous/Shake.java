@@ -17,8 +17,9 @@ public class Shake extends CommandBase {
 			chassis.drive(0.0, 0.9);
 		} else if(autoCount > 25 && autoCount < 75) {
 			chassis.drive(0.0, -0.9);
+		} else { 
+			isDone = true;
 		}
-		
 	}
 
 	protected void interrupted() {
