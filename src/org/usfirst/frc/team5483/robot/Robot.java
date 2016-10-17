@@ -13,22 +13,22 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 public class Robot extends IterativeRobot {
 	
-	private Command selectedAuto;
+    private Command selectedAuto;
 
-	public void robotInit() {
-		CommandBase.init();
+    public void robotInit() {
+	CommandBase.init();
 		
-		DriverStation.init();
+	DriverStation.init();
 		
-		DriverStation.addDefaultAutoMode("Do Nothing", new DoNothing());
-		DriverStation.addAutoMode("3 Second Cross", new OverDefence());
+	DriverStation.addDefaultAutoMode("Do Nothing", new DoNothing());
+	DriverStation.addAutoMode("3 Second Cross", new OverDefence());
 		
-		selectedAuto = new Shake();
-	}
+	selectedAuto = new Shake();
+    }
 
-	public void autonomousInit() {
-		selectedAuto = (Command) DriverStation.getChoosenAutoCommand();
-		selectedAuto.start();
+    public void autonomousInit() {
+	selectedAuto = (Command) DriverStation.getChoosenAutoCommand();
+	selectedAuto.start();
     }
 
     public void autonomousPeriodic() {
@@ -38,17 +38,17 @@ public class Robot extends IterativeRobot {
     public void teleopInit() {
     	if(selectedAuto != null) { selectedAuto.cancel(); }
     	Scheduler.getInstance().add(new XboxTeleopDrive());
-	}
+    }
 
     public void teleopPeriodic() {
     	Scheduler.getInstance().run();
     }
     
     public void disabledInit(){
-	}
+    }
 	
-	public void disabledPeriodic() {
-	}
+    public void disabledPeriodic() {
+    }
     
     public void testPeriodic() {
         LiveWindow.run();
