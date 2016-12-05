@@ -6,7 +6,12 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public abstract class CommandBase extends Command {
 	
+	protected double speedModifierY = 1.0;
+	protected double speedModifierX = 0.5;
+	
+	//SUBSYSTEMS//
 	protected static Chassis chassis;
+	//////////////
 	
 	public CommandBase() {
         super();

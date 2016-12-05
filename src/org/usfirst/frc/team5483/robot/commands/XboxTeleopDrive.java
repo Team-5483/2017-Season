@@ -6,10 +6,6 @@ public class XboxTeleopDrive extends CommandBase {
 
 	private XboxRemote xboxRemote;
 
-	// Real Front Speed Modifiers
-	private double speedModifierY = 1.0;
-	private double speedModifierX = 0.5;
-
 	protected void initialize() {
 		xboxRemote = new XboxRemote();
 	}

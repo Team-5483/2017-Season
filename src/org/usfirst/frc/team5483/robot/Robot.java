@@ -5,7 +5,7 @@ import org.usfirst.frc.team5483.robot.commands.DualJoystickTeleopDrive;
 import org.usfirst.frc.team5483.robot.commands.SingleJoystickTeleopDrive;
 import org.usfirst.frc.team5483.robot.commands.XboxTeleopDrive;
 import org.usfirst.frc.team5483.robot.commands.autonomous.DoNothing;
-import org.usfirst.frc.team5483.robot.commands.autonomous.OverDefence;
+import org.usfirst.frc.team5483.robot.commands.autonomous.DriveStraight;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
