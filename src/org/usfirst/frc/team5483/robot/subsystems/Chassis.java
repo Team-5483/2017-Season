@@ -40,12 +40,12 @@ public class Chassis extends Subsystem {
 									frontRightMotor, backRightMotor);
 		robotDrive.setSafetyEnabled(false);
 		
-		gyro = new AnalogGyro(1);
-		gyro.reset();
-		gyro.calibrate();
+		//gyro = new AnalogGyro(1);
+		//gyro.reset();
+		//gyro.calibrate();
 		
-		leftEncoder = new Encoder(RobotMap.LEFT_ENCODER_PORT_A, RobotMap.LEFT_ENCODER_PORT_B, false, Encoder.EncodingType.k4X);
-		rightEncoder = new Encoder(RobotMap.RIGHT_ENCODER_PORT_A, RobotMap.RIGHT_ENCODER_PORT_B, false, Encoder.EncodingType.k4X);
+		//leftEncoder = new Encoder(RobotMap.LEFT_ENCODER_PORT_A, RobotMap.LEFT_ENCODER_PORT_B, false, Encoder.EncodingType.k4X);
+		//rightEncoder = new Encoder(RobotMap.RIGHT_ENCODER_PORT_A, RobotMap.RIGHT_ENCODER_PORT_B, false, Encoder.EncodingType.k4X);
 	}
 
 	protected void initDefaultCommand() {

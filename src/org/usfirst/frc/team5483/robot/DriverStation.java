@@ -6,6 +6,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class DriverStation {
 	private static SendableChooser autoChooser;
+	private static SendableChooser teleChooser;
+
 	
 	public static void init() {
 		autoChooser = new SendableChooser();
@@ -17,6 +19,14 @@ public class DriverStation {
 	
 	public static void addAutoMode(String name, Command command) {
 		autoChooser.addObject(name, command);
+	}
+	
+	public static void addDefaultTeleMode(String name, Command command) {
+		teleChooser.addDefault(name, command);
+	}
+	
+	public static void addTeleMode(String name, Command command) {
+		teleChooser.addObject(name, command);
 	}
 	
 	public static void addTeleopCommand(String name, Command command) {
@@ -35,7 +45,11 @@ public class DriverStation {
 		SmartDashboard.putString(name, value);
 	}
 	
-	public static Object getChoosenAutoCommand() {
+	public static Object getChosenAutoCommand() {
 		return autoChooser.getSelected();
+	}
+	
+	public static Object getChosenTeleCommand() {
+		return teleChooser.getSelected();
 	}
 }
