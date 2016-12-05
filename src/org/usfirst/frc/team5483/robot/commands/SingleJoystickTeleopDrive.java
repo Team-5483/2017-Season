@@ -1,7 +1,6 @@
 package org.usfirst.frc.team5483.robot.commands;
 
 import org.usfirst.frc.team5483.robot.io.SingleJoystick;
-import org.usfirst.frc.team5483.robot.subsystems.PneumaticTest;
 
 public class SingleJoystickTeleopDrive extends CommandBase{
 
