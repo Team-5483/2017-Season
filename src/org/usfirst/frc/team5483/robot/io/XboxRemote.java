@@ -6,7 +6,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class XboxRemote {
-	private static final byte XBOX_REMOTE = 0;
+	private static final Joystick xboxRemote = new Joystick(0);
 
 	private static final byte XBOX_DPAD = 0;
 	private static final byte XBOX_LEFT_ANALOG_STICK_X_AXIS = 0;
@@ -26,8 +26,6 @@ public class XboxRemote {
 	private static final byte XBOX_RB = 6;
 	private static final byte XBOX_LT = 9;
 	private static final byte XBOX_RT = 10;
-	
-	private static final Joystick xboxRemote = new Joystick(XBOX_REMOTE);
 	
 	private static final Button aButton = new JoystickButton(xboxRemote, XBOX_A);
 	private static final Button bButton = new JoystickButton(xboxRemote, XBOX_B);

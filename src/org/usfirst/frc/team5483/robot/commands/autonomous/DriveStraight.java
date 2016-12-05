@@ -2,7 +2,7 @@ package org.usfirst.frc.team5483.robot.commands.autonomous;
 
 import org.usfirst.frc.team5483.robot.commands.CommandBase;
 
-public class OverDefence extends CommandBase {
+public class DriveStraight extends CommandBase {
 	
 	private int countAuto;
 	private int maxTime;
