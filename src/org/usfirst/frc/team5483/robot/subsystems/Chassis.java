@@ -2,6 +2,7 @@ package org.usfirst.frc.team5483.robot.subsystems;
 
 import org.usfirst.frc.team5483.robot.RobotMap;
 import org.usfirst.frc.team5483.robot.commands.XboxTeleopDrive;
+import org.usfirst.frc.team5483.robot.toolbox.Settings;
 
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Encoder;
@@ -40,12 +41,16 @@ public class Chassis extends Subsystem {
 									frontRightMotor, backRightMotor);
 		robotDrive.setSafetyEnabled(false);
 		
-		//gyro = new AnalogGyro(1);
-		//gyro.reset();
-		//gyro.calibrate();
+		if(Settings.useGyro) {
+			gyro = new AnalogGyro(RobotMap.GYRO);
+			gyro.reset();
+			gyro.calibrate();
+		}
 		
-		//leftEncoder = new Encoder(RobotMap.LEFT_ENCODER_PORT_A, RobotMap.LEFT_ENCODER_PORT_B, false, Encoder.EncodingType.k4X);
-		//rightEncoder = new Encoder(RobotMap.RIGHT_ENCODER_PORT_A, RobotMap.RIGHT_ENCODER_PORT_B, false, Encoder.EncodingType.k4X);
+		if(Settings.useEncoders) {
+			//leftEncoder = new Encoder(RobotMap.LEFT_ENCODER_PORT_A, RobotMap.LEFT_ENCODER_PORT_B, false, Encoder.EncodingType.k4X);
+			//rightEncoder = new Encoder(RobotMap.RIGHT_ENCODER_PORT_A, RobotMap.RIGHT_ENCODER_PORT_B, false, Encoder.EncodingType.k4X);
+		}
 	}
 
 	protected void initDefaultCommand() {
