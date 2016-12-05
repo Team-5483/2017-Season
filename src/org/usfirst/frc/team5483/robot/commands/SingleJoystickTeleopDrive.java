@@ -18,6 +18,8 @@ public class SingleJoystickTeleopDrive extends CommandBase{
 		double y = joystick.getJoystickY() * speedModifierY * joystick.getJoystickSlider();
 		double x = joystick.getJoystickX() * speedModifierX;
 		chassis.drive(y, x);
+		
+		if(joystick.getTrigger()) {testSubsystem.shoot();}
 	}
 
 	protected void interrupted() {
