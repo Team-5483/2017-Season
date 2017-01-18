@@ -4,11 +4,15 @@ import edu.wpi.first.wpilibj.Joystick;
 
 public class SingleJoystick {
 	private static final Joystick joystick = new Joystick(0);
-	
 	private static final byte JOYSTICK_ANALOG_STICK_X_AXIS = 0;
 	private static final byte JOYSTICK_ANALOG_STICK_Y_AXIS = 1;
 	private static final byte JOYSTICK_ANALOG_STICK_Z_AXIS = 2;
 	private static final byte JOYSTICK_ANALOG_SLIDER_VALUE = 3;
+	private static final byte JOYSTICK_KNOB_ON_TOP_X = 5;
+	
+	public double getJoystickKnobOnTopX() {
+ 		return joystick.getRawAxis(JOYSTICK_KNOB_ON_TOP_X);		
+	}
 	
  	public double getJoystickX() {
  		return joystick.getRawAxis(JOYSTICK_ANALOG_STICK_X_AXIS);

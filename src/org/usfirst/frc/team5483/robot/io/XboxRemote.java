@@ -38,7 +38,17 @@ public class XboxRemote {
 	
 	private static double DEADZONE_MAGIC_NUMBER = .15;
 
+	
+	
 	// XBOX CONTROLLER
+	public boolean isRightTriggerPressed() {
+		return xboxRemote.getRawButton(XBOX_RT);
+	}
+
+	public boolean isLeftTriggerPressed() {
+		return xboxRemote.getRawButton(XBOX_LT);
+	}
+	
 	public void whileAButtonHeld(Command command) {
 		aButton.whileHeld(command);
 	}

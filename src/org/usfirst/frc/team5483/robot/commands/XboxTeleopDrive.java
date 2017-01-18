@@ -13,7 +13,11 @@ public class XboxTeleopDrive extends CommandBase {
 	protected void execute() {
 		double y = xboxRemote.getLeftJoystickY() * speedModifierY;
 		double x = xboxRemote.getRightJoystickX() * speedModifierX;
+		double mid = 0;
+		if(xboxRemote.isLeftTriggerPressed()) mid = -1;
+		if(xboxRemote.isRightTriggerPressed()) mid = 1;
 		
+		chassis.middleWheel(mid);
 		chassis.drive(y, x);
 	}
 
