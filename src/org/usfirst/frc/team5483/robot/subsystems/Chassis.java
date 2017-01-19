@@ -21,7 +21,9 @@ public class Chassis extends Subsystem {
 	private Victor middleMotor;
 
 	private Gyro gyro;
-
+	public double angle = 0;
+	
+	
 	private Encoder leftEncoder;
 	private Encoder rightEncoder;
 	private final double RIGHT_ENCOCDER_TO_DISTANCE_RATIO = (3.5 * Math.PI) / (12.0 * 256.0);
@@ -59,11 +61,15 @@ public class Chassis extends Subsystem {
 			// RobotMap.RIGHT_ENCODER_PORT_B, false, Encoder.EncodingType.k4X);
 		}
 	}
-
+	
+	
+	
 	protected void initDefaultCommand() {
 		setDefaultCommand(new XboxTeleopDrive());
 	}
 
+	
+	
 	public void drive(double y, double x) {
 		robotDrive.drive(y, x);
 	}
