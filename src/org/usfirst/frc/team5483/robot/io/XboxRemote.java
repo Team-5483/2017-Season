@@ -49,6 +49,10 @@ public class XboxRemote {
 		return xboxRemote.getRawButton(XBOX_LT);
 	}
 	
+	public boolean isAButtonPressed() {
+		return xboxRemote.getRawButton(XBOX_A);
+	}
+	
 	public void whileAButtonHeld(Command command) {
 		aButton.whileHeld(command);
 	}

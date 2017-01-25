@@ -8,7 +8,6 @@ public class DriverStation {
 	private static SendableChooser autoChooser;
 	private static SendableChooser teleChooser;
 
-	
 	public static void init() {
 		autoChooser = new SendableChooser();
 	}

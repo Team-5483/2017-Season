@@ -18,6 +18,10 @@ public class ExperimentalDrive extends CommandBase {
 		double x = xboxRemote.getRightJoystickX() * speedModifierX;
 		double z = xboxRemote.getLeftJoystickX();
 		double mid = 0;
+		
+		if(xboxRemote.isAButtonPressed())
+			gridDrive = !gridDrive;
+		
 		if (!gridDrive) {
 			if (xboxRemote.isLeftTriggerPressed())
 				mid = -1;
@@ -28,13 +32,13 @@ public class ExperimentalDrive extends CommandBase {
 			chassis.drive(z,y);
 		} else {
 			chassis.drive((y-z)*Math.cos(chassis.angle), (y+z)*Math.cos(chassis.angle));
-			chassis.middleWheel(x*Math.sin(chassis.angle));
-			
+			chassis.middleWheel(x*Math.sin(chassis.angle));	
 		}
 	}
 
 	protected boolean isFinished() {
-		return false;
+		return !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!true;
+		//false lol
 	}
 
 }
