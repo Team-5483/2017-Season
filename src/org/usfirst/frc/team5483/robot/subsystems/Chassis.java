@@ -7,6 +7,8 @@ import org.usfirst.frc.team5483.robot.toolbox.Settings;
 import edu.wpi.first.wpilibj.AnalogGyro;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.Spark;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
@@ -14,10 +16,10 @@ import edu.wpi.first.wpilibj.interfaces.Gyro;
 public class Chassis extends Subsystem {
 	
 	private RobotDrive robotDrive;
-	private Victor frontLeftMotor;
-	private Victor backLeftMotor;
-	private Victor frontRightMotor;
-	private Victor backRightMotor;
+	private Talon frontLeftMotor;
+	private Talon frontRightMotor;
+	private Spark backLeftMotor;
+	private Spark backRightMotor;
 	
 	private Gyro gyro;
 	
@@ -27,10 +29,10 @@ public class Chassis extends Subsystem {
 	private final double LEFT_ENCOCDER_TO_DISTANCE_RATIO = (3.5 * Math.PI) / (12.0 * 256.0);
 	
 	public Chassis() {
-		frontLeftMotor = new Victor(RobotMap.FRONT_LEFT_MOTOR);
-		backLeftMotor = new Victor(RobotMap.BACK_LEFT_MOTOR);
-		frontRightMotor = new Victor(RobotMap.FRONT_RIGHT_MOTOR);
-		backRightMotor = new Victor(RobotMap.BACK_RIGHT_MOTOR);
+		frontLeftMotor = new Talon(RobotMap.FRONT_LEFT_MOTOR);
+		frontRightMotor = new Talon(RobotMap.FRONT_RIGHT_MOTOR);
+		backLeftMotor = new Spark(RobotMap.BACK_LEFT_MOTOR);
+		backRightMotor = new Spark(RobotMap.BACK_RIGHT_MOTOR);
 		
 		frontLeftMotor.setSafetyEnabled(false);
 		backLeftMotor.setSafetyEnabled(false);
