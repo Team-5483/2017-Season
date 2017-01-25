@@ -1,2 +1,2 @@
-# NewRobotBase
-Writing up a base for a typical robot to use next year during future seasons
+# 2017 Robot
+Robot code for the 2017 First Robotics Competition
