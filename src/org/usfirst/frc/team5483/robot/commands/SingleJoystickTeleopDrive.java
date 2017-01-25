@@ -25,7 +25,6 @@ public class SingleJoystickTeleopDrive extends CommandBase{
 		chassis.middleWheel(mid);
 		chassis.drive(y, x);
 		
-		if(joystick.getTrigger()) {testSubsystem.shoot();}
 	}
 
 	protected void interrupted() {

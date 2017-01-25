@@ -1,7 +1,6 @@
 package org.usfirst.frc.team5483.robot.commands;
 
 import org.usfirst.frc.team5483.robot.subsystems.Chassis;
-import org.usfirst.frc.team5483.robot.subsystems.PneumaticsTestBed;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -13,7 +12,6 @@ public abstract class CommandBase extends Command {
 	//SUBSYSTEMS//
 	protected static Chassis chassis;
 	
-	protected static PneumaticsTestBed testSubsystem;
 	//////////////
 	
 	public CommandBase() {
@@ -26,6 +24,5 @@ public abstract class CommandBase extends Command {
 	
 	public static void init() {
 		chassis = new Chassis();
-		testSubsystem = new PneumaticsTestBed();
-    }
+	}
 }
