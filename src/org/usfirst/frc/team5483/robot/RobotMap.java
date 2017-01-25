@@ -6,6 +6,8 @@ public class RobotMap {
 	public static final byte BACK_LEFT_MOTOR = 0;
 	public static final byte BACK_RIGHT_MOTOR = 3;
 	
+	public static final byte MIDDLE_MOTOR = 4;
+	
 	public static final byte GYRO = 1;
 	
 	public static final byte LEFT_ENCODER_PORT_A = 1;

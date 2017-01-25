@@ -14,6 +14,7 @@ public class XboxTeleopDrive extends CommandBase {
 		double y = xboxRemote.getLeftJoystickY() * speedModifierY;
 		double x = xboxRemote.getRightJoystickX() * speedModifierX;
 		
+		System.out.println(chassis.getGyroAngle());
 		chassis.drive(y, x);
 	}
 

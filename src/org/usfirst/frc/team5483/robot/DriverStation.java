@@ -8,7 +8,6 @@ public class DriverStation {
 	private static SendableChooser autoChooser;
 	private static SendableChooser teleChooser;
 
-	
 	public static void init() {
 		autoChooser = new SendableChooser();
 	}
@@ -16,7 +15,7 @@ public class DriverStation {
 	public static void addDefaultAutoMode(String name, Command command) {
 		autoChooser.addDefault(name, command);
 	}
-	
+	 
 	public static void addAutoMode(String name, Command command) {
 		autoChooser.addObject(name, command);
 	}

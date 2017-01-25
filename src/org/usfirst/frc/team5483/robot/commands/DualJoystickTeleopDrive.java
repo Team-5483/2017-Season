@@ -14,7 +14,10 @@ public class DualJoystickTeleopDrive extends CommandBase {
 	protected void execute() {
 		double y = dualJoysticks.getJoystick1Y() * speedModifierY;
 		double x = dualJoysticks.getJoystick2X() * speedModifierX;
+		double mid = 0;
+		mid = dualJoysticks.getJoystick1X()/2 + dualJoysticks.getJoystick2X()/2;
 		
+		chassis.middleWheel(mid);
 		chassis.drive(y, x);
 	}
 

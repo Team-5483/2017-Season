@@ -10,6 +10,14 @@ public class DualJoysticks {
 	private static final byte JOYSTICK_ANALOG_STICK_X_AXIS = 0;
 	private static final byte JOYSTICK_ANALOG_STICK_Y_AXIS = 1;
 	
+	public static Joystick getJoystick1() {
+		return joystick1;
+	}
+	
+	public static Joystick getJoystick2() {
+		return joystick2;
+	}
+	
 	public double getJoystick1X() {
 		return joystick1.getRawAxis(JOYSTICK_ANALOG_STICK_X_AXIS);
 	}
