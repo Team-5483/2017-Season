@@ -2,6 +2,7 @@ package org.usfirst.frc.team5483.robot.subsystems;
 
 import org.usfirst.frc.team5483.robot.RobotMap;
 import org.usfirst.frc.team5483.robot.commands.XboxTeleopDrive;
+import org.usfirst.frc.team5483.robot.toolbox.RobotMath;
 import org.usfirst.frc.team5483.robot.toolbox.Settings;
 
 import edu.wpi.first.wpilibj.AnalogGyro;
@@ -24,7 +25,6 @@ public class Chassis extends Subsystem {
 
 	private Gyro gyro;
 	public double angle = 0;
-	
 	
 	private Encoder leftEncoder;
 	private Encoder rightEncoder;
@@ -67,7 +67,7 @@ public class Chassis extends Subsystem {
 	}
 	
 	public void drive(double y, double x) {
-		robotDrive.drive(y, x);
+		robotDrive.drive(RobotMath.sigmoidDriveFunction(-y), x);
 	}
 
 	public void middleWheel(double mid) {
