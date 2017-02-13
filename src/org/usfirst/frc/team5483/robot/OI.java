@@ -1,6 +1,7 @@
 package org.usfirst.frc.team5483.robot;
 
 import org.usfirst.frc.team5483.robot.commands.ClimbRope;
+import org.usfirst.frc.team5483.robot.commands.GrabBalls;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -20,8 +21,10 @@ public class OI {
 		
 		final JoystickButton l_trigger = new JoystickButton(leftStick, 1);
 		final JoystickButton l_butt_2 = new JoystickButton(leftStick, 2);
+		final JoystickButton l_butt_3 = new JoystickButton(leftStick, 3);
 		
 		l_butt_2.whileHeld(new ClimbRope());
+		l_butt_3.whileHeld(new GrabBalls());
 	}
 	
 	public Joystick getLeftStick() {
