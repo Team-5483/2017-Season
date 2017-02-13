@@ -10,23 +10,25 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Chassis extends Subsystem {
 	
-	private static final Spark frontLeftController = new Spark(0);
-	private static final Spark frontRightController = new Spark(2);
-	private static final Spark rearLeftController = new Spark(3);
-	private static final Spark rearRightController = new Spark(4);
+	private static Spark frontLeftController;
+	private static Spark frontRightController;
+	private static Spark rearLeftController;
+	private static Spark rearRightController;
 	
-	private static final Talon middleController = new Talon(5);
+	private static Talon middleController;
 	
-	private static final RobotDrive robotDrive = new RobotDrive(frontLeftController, rearLeftController,
-			frontRightController, rearRightController);
+	private static RobotDrive robotDrive;
 
-	@Override
-	protected void initDefaultCommand() {
-		setDefaultCommand(new DualStickDrive());
-	}
-	
-	public void tankDrive(Joystick left, Joystick right) {
-		robotDrive.tankDrive(left, right);
+	public Chassis() {
+		frontLeftController = new Spark(0);
+		frontRightController = new Spark(2);
+		rearLeftController = new Spark(3);
+		rearRightController = new Spark(4);
+		
+		middleController = new Talon(5);
+		
+		robotDrive = new RobotDrive(frontLeftController, rearLeftController,
+				frontRightController, rearRightController);
 	}
 	
 	public void tankDrive(double left, double right) {
@@ -40,6 +42,11 @@ public class Chassis extends Subsystem {
 	
 	public void middleDrive(double x) {
 		middleController.set(x);
+	}
+	
+	@Override
+	protected void initDefaultCommand() {
+		setDefaultCommand(new DualStickDrive());
 	}
 
 }
