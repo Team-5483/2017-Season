@@ -9,36 +9,35 @@ public class LoadBall extends Command {
 	
 	private Timer timer;
 	
-    public LoadBall() {
-    	requires(Robot.ballShooter);
+	public LoadBall() {
+		requires(Robot.ballShooter);
     	
-    	timer = new Timer();
-    }
+		timer = new Timer();
+	}
 
-    protected void initialize() {
-    	timer.start();
-    }
+	protected void initialize() {
+		timer.start();
+	}
 
-    protected void execute() {
-    	Robot.ballShooter.launchBall();
-    }
+	protected void execute() {
+		Robot.ballShooter.launchBall();
+	}
 
-    protected boolean isFinished() {
-    	if(timer.hasPeriodPassed(0.5)) {
-    		timer.stop();
-    		timer.reset();
-    		return true;
-    	}
+	protected boolean isFinished() {
+		if(timer.hasPeriodPassed(0.5)) {
+			timer.stop();
+			timer.reset();
+			return true;
+		}
     	
-        return false;
-    }
+		return false;
+	}
 
-    protected void end() {
-    	Robot.ballShooter.stopLoadMotor();
-    }
+	protected void end() {
+		Robot.ballShooter.stopLoadMotor();
+	}
 
-    protected void interrupted() {
-    	Robot.ballShooter.stopLoadMotor();
-    }
+	protected void interrupted() {
+		Robot.ballShooter.stopLoadMotor();
+	}
 }
-
