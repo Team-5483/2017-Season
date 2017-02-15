@@ -20,5 +20,15 @@ public class ClimbRope extends Command {
 	protected boolean isFinished() {
 		return false;
 	}
+	
+	@Override
+    protected void end() {
+		Robot.climber.climbStop();
+    }
+    
+    @Override
+    protected void interrupted() {
+    	Robot.climber.climbStop();
+    }
 
 }

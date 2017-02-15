@@ -2,6 +2,7 @@
 package org.usfirst.frc.team5483.robot;
 
 import org.usfirst.frc.team5483.robot.subsystems.BallGrabber;
+import org.usfirst.frc.team5483.robot.subsystems.BallShooter;
 import org.usfirst.frc.team5483.robot.subsystems.Chassis;
 import org.usfirst.frc.team5483.robot.subsystems.Climber;
 
@@ -19,6 +20,7 @@ public class Robot extends IterativeRobot {
 	public static Chassis chassis;
 	public static Climber climber;
 	public static BallGrabber ballGrabber;
+	public static BallShooter ballShooter;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
@@ -29,6 +31,12 @@ public class Robot extends IterativeRobot {
 		chassis = new Chassis();
 		climber = new Climber();
 		ballGrabber = new BallGrabber();
+		ballShooter = new BallShooter();
+		
+		SmartDashboard.putData(chassis);
+		SmartDashboard.putData(climber);
+		SmartDashboard.putData(ballGrabber);
+		SmartDashboard.putData(ballShooter);
 		
 		//chooser.addDefault("Default Auto", new ExampleCommand());
 		//chooser.addObject("My Auto", new MyAutoCommand());

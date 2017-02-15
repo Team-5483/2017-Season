@@ -7,22 +7,15 @@ public class Climber extends Subsystem {
 	
 	private static final Talon winchMotor = new Talon(9);
 	
-	public boolean stopped = false;
-
-	@Override
-	protected void initDefaultCommand() {
-	}
-	
 	public void climbRope() {
 		winchMotor.set(1);
 	}
 	
-	public void climbDisable() {
-		winchMotor.disable();
-		stopped = true;
+	public void climbStop() {
+		winchMotor.set(0);
 	}
 	
-	public boolean isStopped() {
-		return stopped;
+	@Override
+	protected void initDefaultCommand() {
 	}
 }

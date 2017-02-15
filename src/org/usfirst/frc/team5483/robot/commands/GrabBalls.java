@@ -19,5 +19,15 @@ public class GrabBalls extends Command {
 	protected boolean isFinished() {
 		return false;
 	}
+	
+	@Override
+    protected void end() {
+		Robot.ballGrabber.stopGrabber();
+    }
+    
+    @Override
+    protected void interrupted() {
+    	Robot.ballGrabber.stopGrabber();
+    }
 
 }
