@@ -4,11 +4,14 @@ import org.usfirst.frc.team5483.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class BallShooter extends Subsystem {
 	
 	private Victor loadBallMotor;
 	private Victor launchBallMotor;
+	
+	private boolean ballReady = false;
 	
 	public BallShooter() {
 		loadBallMotor = new Victor(RobotMap.ballLoaderMotor);
@@ -29,6 +32,10 @@ public class BallShooter extends Subsystem {
 	
 	public void stopLaunchMotor() {
 		launchBallMotor.setSpeed(0);
+	}
+	
+	public void log() {
+		SmartDashboard.putBoolean("Ball Loaded", ballReady);
 	}
 	
 	@Override

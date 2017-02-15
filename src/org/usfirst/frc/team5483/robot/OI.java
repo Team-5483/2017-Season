@@ -11,26 +11,20 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class OI {
 	
-	private static Joystick leftStick;
-	private static Joystick rightStick;
-	
-	private static JoystickButton r_trigger;
+	private static Joystick leftStick = new Joystick(RobotMap.lStickPort);
+	private static Joystick rightStick = new Joystick(RobotMap.rStickPort);
 	
 	public OI() {
 		
-		//Sticks
-		leftStick = new Joystick(RobotMap.lStickPort);
-		rightStick = new Joystick(RobotMap.rStickPort);
-		
 		//Buttons - port #s are subject to change when tested
-		r_trigger = new JoystickButton(rightStick, RobotMap.logitech_trigger);
-		final JoystickButton r_butt_4 = new JoystickButton( rightStick, RobotMap.logitech_4);
+		JoystickButton r_trigger = new JoystickButton(rightStick, RobotMap.logitech_trigger);
+		JoystickButton r_butt_4 = new JoystickButton( rightStick, RobotMap.logitech_4);
 		
-		final JoystickButton l_trigger = new JoystickButton(leftStick,  RobotMap.logitech_trigger);
-		final JoystickButton l_butt_2 = new JoystickButton( leftStick,  RobotMap.logitech_2);
-		final JoystickButton l_butt_3 = new JoystickButton( leftStick,  RobotMap.logitech_3);
-		final JoystickButton l_butt_4 = new JoystickButton( leftStick,  RobotMap.logitech_4);
-		final JoystickButton l_butt_5 = new JoystickButton( leftStick,  RobotMap.logitech_5);
+		JoystickButton l_trigger = new JoystickButton(leftStick,  RobotMap.logitech_trigger);
+		JoystickButton l_butt_2 = new JoystickButton( leftStick,  RobotMap.logitech_2);
+		JoystickButton l_butt_3 = new JoystickButton( leftStick,  RobotMap.logitech_3);
+		JoystickButton l_butt_4 = new JoystickButton( leftStick,  RobotMap.logitech_4);
+		JoystickButton l_butt_5 = new JoystickButton( leftStick,  RobotMap.logitech_5);
 		
 		l_butt_2.whileHeld(new ClimbRope());
 		

@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Chassis extends Subsystem {
 	
@@ -65,6 +66,13 @@ public class Chassis extends Subsystem {
 		rightEncoder.setReverseDirection(true);
 		rightEncoder.setSamplesToAverage(7);
 		rightEncoder.reset();
+	}
+	
+	public void log() {
+		SmartDashboard.putNumber("Left Distance", leftEncoder.getDistance());
+		SmartDashboard.putNumber("Right Distance", rightEncoder.getDistance());
+		SmartDashboard.putNumber("Left Speed", leftEncoder.getRate());
+		SmartDashboard.putNumber("Right Speed", rightEncoder.getRate());
 	}
 	
 	@Override

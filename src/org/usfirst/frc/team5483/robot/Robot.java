@@ -1,6 +1,7 @@
 
 package org.usfirst.frc.team5483.robot;
 
+import org.usfirst.frc.team5483.robot.commands.autonomous.DoNothing;
 import org.usfirst.frc.team5483.robot.subsystems.BallGrabber;
 import org.usfirst.frc.team5483.robot.subsystems.BallShooter;
 import org.usfirst.frc.team5483.robot.subsystems.Chassis;
@@ -15,32 +16,35 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends IterativeRobot {
 	
-	public static OI oi;
-	
 	public static Chassis chassis;
 	public static Climber climber;
 	public static BallGrabber ballGrabber;
 	public static BallShooter ballShooter;
+	
+	public static OI oi;
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
 
 	@Override
 	public void robotInit() {
-		oi = new OI();
 		chassis = new Chassis();
 		climber = new Climber();
 		ballGrabber = new BallGrabber();
 		ballShooter = new BallShooter();
+		
+		oi = new OI();
 		
 		SmartDashboard.putData(chassis);
 		SmartDashboard.putData(climber);
 		SmartDashboard.putData(ballGrabber);
 		SmartDashboard.putData(ballShooter);
 		
-		//chooser.addDefault("Default Auto", new ExampleCommand());
+		chooser.addDefault("Do Nothing", new DoNothing());
 		//chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
+		
+		log();
 	}
 
 	@Override
@@ -79,5 +83,11 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void testPeriodic() {
 		LiveWindow.run();
+	}
+	
+	private void log() {
+		chassis.log();
+		ballGrabber.log();
+		ballShooter.log();
 	}
 }
