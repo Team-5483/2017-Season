@@ -79,5 +79,13 @@ public class Chassis extends Subsystem {
 	public Encoder getRightEncoder() {
 		return leftEncoder;
 	}
+	
+	public void resetLeftEncoder() {
+		leftEncoder.reset();
+	}
+	
+	public void resetRightEncoder() {
+		rightEncoder.reset();
+	}
 
 }
