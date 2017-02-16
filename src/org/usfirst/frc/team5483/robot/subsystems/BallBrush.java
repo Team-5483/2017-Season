@@ -6,13 +6,13 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-public class BallGrabber extends Subsystem {
+public class BallBrush extends Subsystem {
 
 	private Talon grabberMotor;
 	private boolean spinning = false;
 	
-	public BallGrabber() {
-		grabberMotor = new Talon(RobotMap.ballGrabberMotor);
+	public BallBrush() {
+		grabberMotor = new Talon(RobotMap.ballBrush);
 	}
 	
 	public void spinGrabber() {

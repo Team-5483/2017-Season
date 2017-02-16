@@ -45,12 +45,12 @@ public class RobotMap {
 	public static int rEncoderB = 3;
 	
 	//Ball Grabber
-	public static int ballGrabberMotor = 6;
+	public static int ballBrush = 9;
 	
 	//Ball Launcher
-	public static int ballLauncherMotor = 7;
-	public static int ballLoaderMotor = 8;
+	public static int ballShooter = 7;
+	public static int ballLoader = 8;
 	
 	//Climber
-	public static int climbingMotor = 9;
+	public static int climber = 6;
 }

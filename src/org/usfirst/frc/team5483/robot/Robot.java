@@ -2,7 +2,7 @@
 package org.usfirst.frc.team5483.robot;
 
 import org.usfirst.frc.team5483.robot.commands.autonomous.DoNothing;
-import org.usfirst.frc.team5483.robot.subsystems.BallGrabber;
+import org.usfirst.frc.team5483.robot.subsystems.BallBrush;
 import org.usfirst.frc.team5483.robot.subsystems.BallShooter;
 import org.usfirst.frc.team5483.robot.subsystems.Chassis;
 import org.usfirst.frc.team5483.robot.subsystems.Climber;
@@ -18,7 +18,7 @@ public class Robot extends IterativeRobot {
 	
 	public static Chassis chassis;
 	public static Climber climber;
-	public static BallGrabber ballGrabber;
+	public static BallBrush ballGrabber;
 	public static BallShooter ballShooter;
 	
 	public static OI oi;
@@ -30,7 +30,7 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		chassis = new Chassis();
 		climber = new Climber();
-		ballGrabber = new BallGrabber();
+		ballGrabber = new BallBrush();
 		ballShooter = new BallShooter();
 		
 		oi = new OI();

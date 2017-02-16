@@ -14,8 +14,8 @@ public class BallShooter extends Subsystem {
 	private boolean ballReady = false;
 	
 	public BallShooter() {
-		loadBallMotor = new Victor(RobotMap.ballLoaderMotor);
-		launchBallMotor = new Victor(RobotMap.ballLauncherMotor);
+		loadBallMotor = new Victor(RobotMap.ballLoader);
+		launchBallMotor = new Victor(RobotMap.ballShooter);
 	}
 	
 	public void loadBall() {
