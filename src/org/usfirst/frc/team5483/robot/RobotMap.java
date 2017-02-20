@@ -6,6 +6,8 @@ public class RobotMap {
 	public static int rStickPort = 1;
 	
 	//Joystick Buttons (Logitech)
+	public static int logitech_trigger = 1;
+	public static int logitech_2 = 2;
 	public static int logitech_3 = 3;
 	public static int logitech_4 = 4;
 	public static int logitech_5 = 5;
@@ -16,19 +18,6 @@ public class RobotMap {
 	public static int logitech_10 = 10;
 	public static int logitech_11 = 11;
 	public static int logitech_12 = 12;
-	
-	public static int logitech_trigger = 1;
-	
-	//Joystick Buttons (Mad Catz)
-	public static int madcatz_1 = 0;
-	public static int madcatz_2 = 1;
-	public static int madcatz_3 = 2;
-	public static int madcatz_4 = 3;
-	public static int madcatz_5 = 4;
-	public static int madcatz_6 = 5;
-	
-	public static int madcatz_trigger = 6;
-	public static int madcatz_thumb = 7;
 	
 	//Drive Wheels
 	public static int lFrontMotor = 4;

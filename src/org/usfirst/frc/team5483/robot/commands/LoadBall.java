@@ -7,14 +7,14 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class LoadBall extends Command {
 	
-	private Timer timer;
+//	private Timer timer;
 	
 	public LoadBall() {
-		timer = new Timer();
+//		timer = new Timer();
 	}
 
 	protected void initialize() {
-		timer.start();
+//		timer.start();
 	}
 
 	protected void execute() {
@@ -22,11 +22,11 @@ public class LoadBall extends Command {
 	}
 
 	protected boolean isFinished() {
-		if(timer.hasPeriodPassed(0.5)) {
-			timer.stop();
-			timer.reset();
-			return true;
-		}
+//		if(timer.hasPeriodPassed(0.5)) {
+//			timer.stop();
+//			timer.reset();
+//			return true;
+//		}
     	
 		return false;
 	}
