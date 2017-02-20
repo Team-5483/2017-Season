@@ -21,6 +21,7 @@ public class OI {
 //		JoystickButton r_butt_4 = new JoystickButton( rightStick, RobotMap.logitech_4);
 //		
 		JoystickButton l_trigger = new JoystickButton(leftStick,  RobotMap.logitech_trigger);
+		JoystickButton l_butt_2 = new JoystickButton( leftStick,  RobotMap.logitech_2);
 		JoystickButton l_butt_3 = new JoystickButton( leftStick,  RobotMap.logitech_3);
 		JoystickButton l_butt_4 = new JoystickButton( leftStick,  RobotMap.logitech_4);
 		JoystickButton l_butt_5 = new JoystickButton( leftStick,  RobotMap.logitech_5);
