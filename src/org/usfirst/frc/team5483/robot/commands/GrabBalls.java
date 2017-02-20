@@ -7,12 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 public class GrabBalls extends Command {
 	
 	public GrabBalls() {
-		requires(Robot.ballGrabber);
+		requires(Robot.ballBrush);
 	}
 	
 	@Override
 	public void execute() {
-		Robot.ballGrabber.spinGrabber();
+		Robot.ballBrush.spinGrabber();
 	}
 	
 	@Override
@@ -22,11 +22,11 @@ public class GrabBalls extends Command {
 
 	@Override
 	protected void end() {
-		Robot.ballGrabber.stopGrabber();
+		Robot.ballBrush.stopGrabber();
 	}
 
 	@Override
 	protected void interrupted() {
-    	Robot.ballGrabber.stopGrabber();
+    	Robot.ballBrush.stopGrabber();
 	}
 }

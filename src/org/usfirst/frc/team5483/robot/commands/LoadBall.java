@@ -10,8 +10,6 @@ public class LoadBall extends Command {
 	private Timer timer;
 	
 	public LoadBall() {
-		requires(Robot.ballShooter);
-    	
 		timer = new Timer();
 	}
 
@@ -20,7 +18,7 @@ public class LoadBall extends Command {
 	}
 
 	protected void execute() {
-		Robot.ballShooter.launchBall();
+		Robot.ballShooter.loadBall();
 	}
 
 	protected boolean isFinished() {

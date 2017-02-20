@@ -6,19 +6,18 @@ public class RobotMap {
 	public static int rStickPort = 1;
 	
 	//Joystick Buttons (Logitech)
-	public static int logitech_3 = 2;
-	public static int logitech_4 = 3;
-	public static int logitech_5 = 4;
-	public static int logitech_6 = 5;
-	public static int logitech_7 = 6;
-	public static int logitech_8 = 7;
-	public static int logitech_9 = 8;
-	public static int logitech_10 = 9;
-	public static int logitech_11 = 10;
-	public static int logitech_12 = 11;
+	public static int logitech_3 = 3;
+	public static int logitech_4 = 4;
+	public static int logitech_5 = 5;
+	public static int logitech_6 = 6;
+	public static int logitech_7 = 7;
+	public static int logitech_8 = 8;
+	public static int logitech_9 = 9;
+	public static int logitech_10 = 10;
+	public static int logitech_11 = 11;
+	public static int logitech_12 = 12;
 	
-	public static int logitech_trigger = 6;
-	public static int logitech_thumb = 7;
+	public static int logitech_trigger = 1;
 	
 	//Joystick Buttons (Mad Catz)
 	public static int madcatz_1 = 0;
@@ -45,11 +44,11 @@ public class RobotMap {
 	public static int rEncoderB = 3;
 	
 	//Ball Grabber
-	public static int ballBrush = 9;
+	public static int ballBrush = 8;
 	
 	//Ball Launcher
 	public static int ballShooter = 7;
-	public static int ballLoader = 8;
+	public static int ballLoader = 9;
 	
 	//Climber
 	public static int climber = 6;

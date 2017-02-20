@@ -12,7 +12,7 @@ public class BallBrush extends Subsystem {
 	private boolean spinning = false;
 	
 	public BallBrush() {
-		grabberMotor = new Talon(RobotMap.ballBrush);
+		grabberMotor = new Talon(8);
 	}
 	
 	public void spinGrabber() {

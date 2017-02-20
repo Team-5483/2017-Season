@@ -24,7 +24,8 @@ public class DualStickDrive extends Command {
 	
 	@Override
 	public void execute() {
-		Robot.chassis.tankDrive(leftStick.getY(), rightStick.getY());
+		Robot.chassis.drive(-leftStick.getY(), -leftStick.getZ());
+		Robot.chassis.middleDrive(-leftStick.getX());
 	}
 	
 	@Override

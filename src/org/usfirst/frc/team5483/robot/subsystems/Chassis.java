@@ -44,8 +44,8 @@ public class Chassis extends Subsystem {
 		
 	}
 	
-	public void tankDrive(double left, double right) {
-		robotDrive.tankDrive(left, right);
+	public void drive(double left, double right) {
+		robotDrive.arcadeDrive(left, right);
 	}
 	
 	public void middleDrive(double x) {

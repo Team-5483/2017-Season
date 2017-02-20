@@ -17,7 +17,7 @@ public class LaunchBall extends Command {
 
 	@Override
 	protected void initialize() {
-		timer.start();
+//		timer.start();
 	}
     
 	@Override
@@ -26,12 +26,12 @@ public class LaunchBall extends Command {
 	}
 
 	protected boolean isFinished() {
-		if(timer.hasPeriodPassed(2)) {
-			timer.stop();
-			timer.reset();
-			return true;
-		}
-    	
+//		if(timer.hasPeriodPassed(1)) {
+//			timer.stop();
+//			timer.reset();
+//			return true;
+//		}
+//    	
 		return false;
 	}
     

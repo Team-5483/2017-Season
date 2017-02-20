@@ -18,7 +18,7 @@ public class Robot extends IterativeRobot {
 	
 	public static Chassis chassis;
 	public static Climber climber;
-	public static BallBrush ballGrabber;
+	public static BallBrush ballBrush;
 	public static BallShooter ballShooter;
 	
 	public static OI oi;
@@ -30,14 +30,14 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		chassis = new Chassis();
 		climber = new Climber();
-		ballGrabber = new BallBrush();
+		ballBrush = new BallBrush();
 		ballShooter = new BallShooter();
 		
 		oi = new OI();
 		
 		SmartDashboard.putData(chassis);
 		SmartDashboard.putData(climber);
-		SmartDashboard.putData(ballGrabber);
+		SmartDashboard.putData(ballBrush);
 		SmartDashboard.putData(ballShooter);
 		
 		chooser.addDefault("Do Nothing", new DoNothing());
@@ -87,7 +87,7 @@ public class Robot extends IterativeRobot {
 	
 	private void log() {
 		chassis.log();
-		ballGrabber.log();
+		ballBrush.log();
 		ballShooter.log();
 	}
 }

@@ -1,14 +1,21 @@
 package org.usfirst.frc.team5483.robot.subsystems;
 
+import org.usfirst.frc.team5483.robot.RobotMap;
+
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 public class Climber extends Subsystem {
 	
-	private static final Talon winchMotor = new Talon(9);
+	private static Spark winchMotor;
+	
+	public Climber() {
+		winchMotor = new Spark(RobotMap.climber);
+	}
 	
 	public void climbRope() {
-		winchMotor.set(1);
+		winchMotor.set(-1);
 	}
 	
 	public void climbStop() {

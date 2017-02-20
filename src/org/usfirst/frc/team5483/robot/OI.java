@@ -17,21 +17,22 @@ public class OI {
 	public OI() {
 		
 		//Buttons - port #s are subject to change when tested
-		JoystickButton r_trigger = new JoystickButton(rightStick, RobotMap.logitech_trigger);
-		JoystickButton r_butt_4 = new JoystickButton( rightStick, RobotMap.logitech_4);
-		
+//		JoystickButton r_trigger = new JoystickButton(rightStick, RobotMap.logitech_trigger);
+//		JoystickButton r_butt_4 = new JoystickButton( rightStick, RobotMap.logitech_4);
+//		
 		JoystickButton l_trigger = new JoystickButton(leftStick,  RobotMap.logitech_trigger);
-		JoystickButton l_butt_7 = new JoystickButton( leftStick,  RobotMap.logitech_7);
 		JoystickButton l_butt_3 = new JoystickButton( leftStick,  RobotMap.logitech_3);
 		JoystickButton l_butt_4 = new JoystickButton( leftStick,  RobotMap.logitech_4);
 		JoystickButton l_butt_5 = new JoystickButton( leftStick,  RobotMap.logitech_5);
+		JoystickButton l_butt_6 = new JoystickButton( leftStick,  RobotMap.logitech_6);
+		JoystickButton l_butt_7 = new JoystickButton( leftStick,  RobotMap.logitech_7);
 		
-		l_butt_7.whileHeld(new ClimbRope());
+		l_butt_5.whileHeld(new ClimbRope());
 		
-		l_butt_3.whileHeld(new GrabBalls());
+		l_butt_6.whileHeld(new GrabBalls());
 		
-		l_butt_4.whenPressed(new LoadBall());
-		l_butt_4.whenReleased(new LaunchBall());
+		l_trigger.whileHeld(new LoadBall());
+		l_butt_3.whileHeld(new LaunchBall());
 	}
 	
 	public Joystick getLeftStick() {
