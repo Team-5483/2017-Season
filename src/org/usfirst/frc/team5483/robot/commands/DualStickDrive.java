@@ -1,6 +1,7 @@
 package org.usfirst.frc.team5483.robot.commands;
 
 import org.usfirst.frc.team5483.robot.Robot;
+import org.usfirst.frc.team5483.robot.utils.RobotMath;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
@@ -24,8 +25,14 @@ public class DualStickDrive extends Command {
 	
 	@Override
 	public void execute() {
+		
+		//One Stick
 		Robot.chassis.drive(-leftStick.getY(), -leftStick.getZ());
 		Robot.chassis.middleDrive(-leftStick.getX());
+		
+		//Dual Stick
+		//Robot.chassis.drive(-leftStick.getY(), -rightStick.getY());
+		//Robot.chassis.middleDrive(-leftStick.getX()*0.5 + -rightStick.getX()*0.5);
 	}
 	
 	@Override

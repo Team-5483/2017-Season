@@ -22,8 +22,8 @@ public class Chassis extends Subsystem {
 	
 	private static RobotDrive robotDrive;
 	
-	//private static Encoder leftEncoder;
-	//private static Encoder rightEncoder;
+	private static Encoder leftEncoder;
+	private static Encoder rightEncoder;
 
 	public Chassis() {
 		frontLeftController = new Talon(RobotMap.lFrontMotor);
@@ -36,11 +36,11 @@ public class Chassis extends Subsystem {
 		robotDrive = new RobotDrive(frontLeftController, rearLeftController,
 				frontRightController, rearRightController);
 		
-		//leftEncoder = new Encoder(RobotMap.lEncoderA, RobotMap.lEncoderB, 
-			//					false, Encoder.EncodingType.k4X);
-		//rightEncoder = new Encoder(RobotMap.rEncoderA, RobotMap.rEncoderB, 
-			//					false, Encoder.EncodingType.k4X);
-		//setupEncoders();
+		leftEncoder = new Encoder(RobotMap.lEncoderA, RobotMap.lEncoderB, 
+								false, Encoder.EncodingType.k4X);
+		rightEncoder = new Encoder(RobotMap.rEncoderA, RobotMap.rEncoderB, 
+								false, Encoder.EncodingType.k4X);
+		setupEncoders();
 		
 	}
 	
@@ -52,27 +52,27 @@ public class Chassis extends Subsystem {
 		middleController.set(x);
 	}
 	
-//	private void setupEncoders() {
-//		leftEncoder.setMaxPeriod(.1);
-//		leftEncoder.setMinRate(10);
-//		leftEncoder.setDistancePerPulse(5);
-//		leftEncoder.setReverseDirection(true);
-//		leftEncoder.setSamplesToAverage(7);
-//		leftEncoder.reset();
-//		
-//		rightEncoder.setMaxPeriod(.1);
-//		rightEncoder.setMinRate(10);
-//		rightEncoder.setDistancePerPulse(5);
-//		rightEncoder.setReverseDirection(true);
-//		rightEncoder.setSamplesToAverage(7);
-//		rightEncoder.reset();
-//	}
+	private void setupEncoders() {
+		leftEncoder.setMaxPeriod(.1);
+		leftEncoder.setMinRate(10);
+		leftEncoder.setDistancePerPulse(5);
+		leftEncoder.setReverseDirection(true);
+		leftEncoder.setSamplesToAverage(7);
+		leftEncoder.reset();
+		
+		rightEncoder.setMaxPeriod(.1);
+		rightEncoder.setMinRate(10);
+		rightEncoder.setDistancePerPulse(5);
+		rightEncoder.setReverseDirection(true);
+		rightEncoder.setSamplesToAverage(7);
+		rightEncoder.reset();
+	}
 	
 	public void log() {
-//		SmartDashboard.putNumber("Left Distance", leftEncoder.getDistance());
-//		SmartDashboard.putNumber("Right Distance", rightEncoder.getDistance());
-//		SmartDashboard.putNumber("Left Speed", leftEncoder.getRate());
-//		SmartDashboard.putNumber("Right Speed", rightEncoder.getRate());
+		SmartDashboard.putNumber("Left Distance", leftEncoder.getDistance());
+		SmartDashboard.putNumber("Right Distance", rightEncoder.getDistance());
+		SmartDashboard.putNumber("Left Speed", leftEncoder.getRate());
+		SmartDashboard.putNumber("Right Speed", rightEncoder.getRate());
 	}
 	
 	@Override
@@ -80,20 +80,20 @@ public class Chassis extends Subsystem {
 		setDefaultCommand(new DualStickDrive());
 	}
 	
-//	public Encoder getLeftEncoder() {
-//		return leftEncoder;
-//	}
-//	
-//	public Encoder getRightEncoder() {
-//		return leftEncoder;
-//	}
-//	
-//	public void resetLeftEncoder() {
-//		leftEncoder.reset();
-//	}
-//	
-//	public void resetRightEncoder() {
-//		rightEncoder.reset();
-//	}
+	public Encoder getLeftEncoder() {
+		return leftEncoder;
+	}
+	
+	public Encoder getRightEncoder() {
+		return rightEncoder;
+	}
+	
+	public void resetLeftEncoder() {
+		leftEncoder.reset();
+	}
+	
+	public void resetRightEncoder() {
+		rightEncoder.reset();
+	}
 
 }

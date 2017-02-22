@@ -27,10 +27,10 @@ public class RobotMap {
 	public static int mWheelMotor = 5;
 	
 	//Encoders
-	public static int lEncoderA = 0;
-	public static int lEncoderB = 1;
-	public static int rEncoderA = 2;
-	public static int rEncoderB = 3;
+	public static int lEncoderA = 2;
+	public static int lEncoderB = 3;
+	public static int rEncoderA = 0;
+	public static int rEncoderB = 1;
 	
 	//Ball Grabber
 	public static int ballBrush = 8;

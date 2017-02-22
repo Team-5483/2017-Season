@@ -2,11 +2,13 @@
 package org.usfirst.frc.team5483.robot;
 
 import org.usfirst.frc.team5483.robot.commands.autonomous.DoNothing;
+import org.usfirst.frc.team5483.robot.commands.autonomous.TestEncoders;
 import org.usfirst.frc.team5483.robot.subsystems.BallBrush;
 import org.usfirst.frc.team5483.robot.subsystems.BallShooter;
 import org.usfirst.frc.team5483.robot.subsystems.Chassis;
 import org.usfirst.frc.team5483.robot.subsystems.Climber;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -25,7 +27,7 @@ public class Robot extends IterativeRobot {
 
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
-
+	
 	@Override
 	public void robotInit() {
 		chassis = new Chassis();
@@ -41,7 +43,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData(ballShooter);
 		
 		chooser.addDefault("Do Nothing", new DoNothing());
-		//chooser.addObject("My Auto", new MyAutoCommand());
+		chooser.addObject("Test", new TestEncoders());
 		SmartDashboard.putData("Auto mode", chooser);
 		
 		log();
@@ -58,7 +60,8 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = chooser.getSelected();
+		//autonomousCommand = chooser.getSelected();
+		autonomousCommand = new TestEncoders();
 
 		if (autonomousCommand != null)
 			autonomousCommand.start();
@@ -78,6 +81,8 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		System.out.println(chassis.getLeftEncoder().getDistance() + " " + 
+				chassis.getRightEncoder().getDistance());
 	}
 
 	@Override

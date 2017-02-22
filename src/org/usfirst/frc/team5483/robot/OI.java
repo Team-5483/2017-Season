@@ -20,20 +20,20 @@ public class OI {
 //		JoystickButton r_trigger = new JoystickButton(rightStick, RobotMap.logitech_trigger);
 //		JoystickButton r_butt_4 = new JoystickButton( rightStick, RobotMap.logitech_4);
 //		
-		JoystickButton l_trigger = new JoystickButton(leftStick,  RobotMap.logitech_trigger);
-		JoystickButton l_butt_2 = new JoystickButton( leftStick,  RobotMap.logitech_2);
-		JoystickButton l_butt_3 = new JoystickButton( leftStick,  RobotMap.logitech_3);
-		JoystickButton l_butt_4 = new JoystickButton( leftStick,  RobotMap.logitech_4);
-		JoystickButton l_butt_5 = new JoystickButton( leftStick,  RobotMap.logitech_5);
-		JoystickButton l_butt_6 = new JoystickButton( leftStick,  RobotMap.logitech_6);
-		JoystickButton l_butt_7 = new JoystickButton( leftStick,  RobotMap.logitech_7);
+		JoystickButton r_trigger = new JoystickButton(rightStick,  RobotMap.logitech_trigger);
+		JoystickButton r_butt_2 = new JoystickButton( rightStick,  RobotMap.logitech_2);
+		JoystickButton r_butt_3 = new JoystickButton( rightStick,  RobotMap.logitech_3);
+		JoystickButton r_butt_4 = new JoystickButton( rightStick,  RobotMap.logitech_4);
+		JoystickButton r_butt_5 = new JoystickButton( rightStick,  RobotMap.logitech_5);
+		JoystickButton r_butt_6 = new JoystickButton( rightStick,  RobotMap.logitech_6);
+		JoystickButton r_butt_7 = new JoystickButton( rightStick,  RobotMap.logitech_7);
 		
-		l_butt_5.whileHeld(new ClimbRope());
+		r_butt_5.whileHeld(new ClimbRope());
 		
-		l_butt_6.whileHeld(new GrabBalls());
+		r_butt_6.whileHeld(new GrabBalls());
 		
-		l_trigger.whileHeld(new LoadBall());
-		l_butt_3.whileHeld(new LaunchBall());
+		r_trigger.whileHeld(new LoadBall());
+		r_butt_2.whileHeld(new LaunchBall());
 	}
 	
 	public Joystick getLeftStick() {
