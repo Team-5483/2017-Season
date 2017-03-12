@@ -4,9 +4,9 @@ import org.usfirst.frc.team5483.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class GrabBalls extends Command {
+public class SweepBalls extends Command {
 	
-	public GrabBalls() {
+	public SweepBalls() {
 		requires(Robot.ballBrush);
 	}
 	

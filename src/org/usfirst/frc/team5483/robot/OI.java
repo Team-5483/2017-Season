@@ -1,7 +1,7 @@
 package org.usfirst.frc.team5483.robot;
 
 import org.usfirst.frc.team5483.robot.commands.ClimbRope;
-import org.usfirst.frc.team5483.robot.commands.GrabBalls;
+import org.usfirst.frc.team5483.robot.commands.SweepBalls;
 import org.usfirst.frc.team5483.robot.commands.LaunchBall;
 import org.usfirst.frc.team5483.robot.commands.LoadBall;
 
@@ -16,10 +16,14 @@ public class OI {
 	
 	public OI() {
 		
-		//Buttons - port #s are subject to change when tested
-//		JoystickButton r_trigger = new JoystickButton(rightStick, RobotMap.logitech_trigger);
-//		JoystickButton r_butt_4 = new JoystickButton( rightStick, RobotMap.logitech_4);
-//		
+		JoystickButton l_trigger = new JoystickButton(rightStick,  RobotMap.logitech_trigger);
+		JoystickButton l_butt_2 = new JoystickButton( rightStick,  RobotMap.logitech_2);
+		JoystickButton l_butt_3 = new JoystickButton( rightStick,  RobotMap.logitech_3);
+		JoystickButton l_butt_4 = new JoystickButton( rightStick,  RobotMap.logitech_4);
+		JoystickButton l_butt_5 = new JoystickButton( rightStick,  RobotMap.logitech_5);
+		JoystickButton l_butt_6 = new JoystickButton( rightStick,  RobotMap.logitech_6);
+		JoystickButton l_butt_7 = new JoystickButton( rightStick,  RobotMap.logitech_7);
+		
 		JoystickButton r_trigger = new JoystickButton(rightStick,  RobotMap.logitech_trigger);
 		JoystickButton r_butt_2 = new JoystickButton( rightStick,  RobotMap.logitech_2);
 		JoystickButton r_butt_3 = new JoystickButton( rightStick,  RobotMap.logitech_3);
@@ -30,7 +34,7 @@ public class OI {
 		
 		r_butt_5.whileHeld(new ClimbRope());
 		
-		r_butt_6.whileHeld(new GrabBalls());
+		r_butt_6.whileHeld(new SweepBalls());
 		
 		r_trigger.whileHeld(new LoadBall());
 		r_butt_2.whileHeld(new LaunchBall());
