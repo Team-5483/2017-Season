@@ -2,7 +2,6 @@
 package org.usfirst.frc.team5483.robot;
 
 import org.usfirst.frc.team5483.robot.commands.autonomous.DoNothing;
-import org.usfirst.frc.team5483.robot.commands.autonomous.TestEncoders;
 import org.usfirst.frc.team5483.robot.subsystems.BallBrush;
 import org.usfirst.frc.team5483.robot.subsystems.BallShooter;
 import org.usfirst.frc.team5483.robot.subsystems.Chassis;
@@ -43,7 +42,6 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData(ballShooter);
 		
 		chooser.addDefault("Do Nothing", new DoNothing());
-		chooser.addObject("Test", new TestEncoders());
 		SmartDashboard.putData("Auto mode", chooser);
 		
 		log();
@@ -60,8 +58,8 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousInit() {
-		//autonomousCommand = chooser.getSelected();
-		autonomousCommand = new TestEncoders();
+//		autonomousCommand = chooser.getSelected();
+//		autonomousCommand = new TestEncoders();
 
 		if (autonomousCommand != null)
 			autonomousCommand.start();
@@ -81,8 +79,6 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		System.out.println(chassis.getLeftEncoder().getDistance() + " " + 
-				chassis.getRightEncoder().getDistance());
 	}
 
 	@Override
