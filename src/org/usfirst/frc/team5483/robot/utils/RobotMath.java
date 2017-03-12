@@ -8,6 +8,6 @@ public class RobotMath {
 	}
 	
 	public static double sigmoid(double a, double deadZone) {
-		return (1/( 1 + Math.pow(Math.E,(-8*a +4))));
+		return (1 / ( 1 + Math.pow(Math.E,(-8*a + 4))));
 	}
 }
