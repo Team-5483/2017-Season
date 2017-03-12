@@ -5,19 +5,19 @@ public class RobotMap {
 	public static int lStickPort = 0;
 	public static int rStickPort = 1;
 	
-	//Joystick Buttons (Logitech)
-	public static int logitech_trigger = 1;
-	public static int logitech_2 = 2;
-	public static int logitech_3 = 3;
-	public static int logitech_4 = 4;
-	public static int logitech_5 = 5;
-	public static int logitech_6 = 6;
-	public static int logitech_7 = 7;
-	public static int logitech_8 = 8;
-	public static int logitech_9 = 9;
-	public static int logitech_10 = 10;
-	public static int logitech_11 = 11;
-	public static int logitech_12 = 12;
+	//Joystick Buttons (joystick)
+	public static int joystick_trigger = 1;
+	public static int joystick_2 = 2;
+	public static int joystick_3 = 3;
+	public static int joystick_4 = 4;
+	public static int joystick_5 = 5;
+	public static int joystick_6 = 6;
+	public static int joystick_7 = 7;
+	public static int joystick_8 = 8;
+	public static int joystick_9 = 9;
+	public static int joystick_10 = 10;
+	public static int joystick_11 = 11;
+	public static int joystick_12 = 12;
 	
 	//Drive Wheels
 	public static int lFrontMotor = 4;
