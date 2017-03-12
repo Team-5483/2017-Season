@@ -3,7 +3,10 @@ package org.usfirst.frc.team5483.robot.utils;
 public class RobotMath {
 	
 	public static double deadZone(double x) {
-		if(Math.abs(x) > 0.3) return x;
+		if(Math.abs(x) > 0.3) {
+			return x;
+		}
+		
 		return 0;
 	}
 	
