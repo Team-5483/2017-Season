@@ -7,14 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class LoadBall extends Command {
 	
-//	private Timer timer;
-	
 	public LoadBall() {
-//		timer = new Timer();
+		//doesn't require anything because it interferes with the
+		//the shooting but should technically require ballshooter lol
 	}
 
 	protected void initialize() {
-//		timer.start();
 	}
 
 	protected void execute() {
@@ -22,12 +20,6 @@ public class LoadBall extends Command {
 	}
 
 	protected boolean isFinished() {
-//		if(timer.hasPeriodPassed(0.5)) {
-//			timer.stop();
-//			timer.reset();
-//			return true;
-//		}
-    	
 		return false;
 	}
 
