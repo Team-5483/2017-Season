@@ -26,9 +26,9 @@ public class DriveXDistance extends Command {
 	@Override
 	public void execute() {
 		curDistance = (Robot.chassis.getLeftEncoder().getDistance() + Robot.chassis.getRightEncoder().getDistance()) / 2;
+		
 		Robot.chassis.drive( leftPID.pidTuned(destDistance, curDistance, 0.5, 0.0, 0.0), 
 						    rightPID.pidTuned(destDistance, curDistance, 0.5, 0.0, 0.0));
-		
 	}
 	
 	@Override
