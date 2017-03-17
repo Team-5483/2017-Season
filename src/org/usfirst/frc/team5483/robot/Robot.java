@@ -36,7 +36,7 @@ public class Robot extends IterativeRobot {
 		ballBrush = new BallBrush();
 		ballShooter = new BallShooter();
 		gearSystem = new GearSystem();
-		
+		new CameraReceiver().start();
 		oi = new OI();
 		
 		SmartDashboard.putData(chassis);
