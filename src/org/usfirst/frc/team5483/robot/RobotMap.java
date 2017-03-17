@@ -17,7 +17,6 @@ public class RobotMap {
 	public static int joystick_9 = 9;
 	public static int joystick_10 = 10;
 	public static int joystick_11 = 11;
-	public static int joystick_12 = 12;
 	
 	//Drive Wheels
 	public static int lFrontMotor = 4;
