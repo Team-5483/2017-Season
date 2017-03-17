@@ -41,4 +41,7 @@ public class RobotMap {
 	
 	//Climber
 	public static int climber = 6;
+	
+	//Gear System
+	public static int gearSolenoid = 0;
 }

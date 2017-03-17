@@ -6,6 +6,7 @@ import org.usfirst.frc.team5483.robot.subsystems.BallBrush;
 import org.usfirst.frc.team5483.robot.subsystems.BallShooter;
 import org.usfirst.frc.team5483.robot.subsystems.Chassis;
 import org.usfirst.frc.team5483.robot.subsystems.Climber;
+import org.usfirst.frc.team5483.robot.subsystems.GearSystem;
 
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -21,6 +22,7 @@ public class Robot extends IterativeRobot {
 	public static Climber climber;
 	public static BallBrush ballBrush;
 	public static BallShooter ballShooter;
+	public static GearSystem gearSystem;
 	
 	public static OI oi;
 
@@ -33,6 +35,7 @@ public class Robot extends IterativeRobot {
 		climber = new Climber();
 		ballBrush = new BallBrush();
 		ballShooter = new BallShooter();
+		gearSystem = new GearSystem();
 		
 		oi = new OI();
 		
@@ -40,6 +43,7 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData(climber);
 		SmartDashboard.putData(ballBrush);
 		SmartDashboard.putData(ballShooter);
+		SmartDashboard.putData(gearSystem);
 		
 		chooser.addDefault("Do Nothing", new DoNothing());
 		SmartDashboard.putData("Auto mode", chooser);
