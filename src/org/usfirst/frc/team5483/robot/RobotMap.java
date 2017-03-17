@@ -43,5 +43,6 @@ public class RobotMap {
 	public static int climber = 6;
 	
 	//Gear System
-	public static int gearSolenoid = 0;
+	public static int gearSolenoidOpen = 0;
+	public static int gearSolenoidClose = 1;
 }
