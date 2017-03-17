@@ -8,7 +8,8 @@ public class PIDTuner {
 	public double pidTuned(double setpoint, double current, 
 			double Kp, double Ki, double Kd) {
 		
-		double error = setpoint - current;
+		//absolute so I don't lose my mind
+		double error = Math.abs((setpoint - current) / setpoint);
 		
 		double P = Kp * error;
 		accumError += error;
