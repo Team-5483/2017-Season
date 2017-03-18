@@ -1,14 +1,13 @@
 
 package org.usfirst.frc.team5483.robot;
 
-import org.usfirst.frc.team5483.robot.commands.autonomous.DoNothing;
+import org.usfirst.frc.team5483.robot.commands.autonomous.*;
 import org.usfirst.frc.team5483.robot.subsystems.BallBrush;
 import org.usfirst.frc.team5483.robot.subsystems.BallShooter;
 import org.usfirst.frc.team5483.robot.subsystems.Chassis;
 import org.usfirst.frc.team5483.robot.subsystems.Climber;
 import org.usfirst.frc.team5483.robot.subsystems.GearSystem;
 
-import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -45,7 +44,11 @@ public class Robot extends IterativeRobot {
 		SmartDashboard.putData(gearSystem);
 		
 		chooser.addDefault("Do Nothing", new DoNothing());
-		SmartDashboard.putData("Auto mode", chooser);
+		chooser.addObject("Left Start", new LeftStartAuto());
+		chooser.addObject("Middle Start", new MiddleStartAuto());
+		chooser.addObject("Right Start", new RightStartAuto());
+		chooser.addObject("Pass Baseline", new DrivePastBaseLine());
+		SmartDashboard.putData("Select Auto: ", chooser);
 		
 		log();
 	}
@@ -61,8 +64,7 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousInit() {
-//		autonomousCommand = chooser.getSelected();
-//		autonomousCommand = new TestEncoders();
+		autonomousCommand = chooser.getSelected();
 
 		if (autonomousCommand != null)
 			autonomousCommand.start();
