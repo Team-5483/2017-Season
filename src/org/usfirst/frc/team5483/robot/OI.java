@@ -33,15 +33,15 @@ public class OI {
 		JoystickButton r_butt_6 = new JoystickButton( rightStick,  RobotMap.joystick_6);
 		JoystickButton r_butt_7 = new JoystickButton( rightStick,  RobotMap.joystick_7);
 		
-		r_butt_2.whileHeld(new ClimbRope());
+		r_butt_5.whileHeld(new ClimbRope());
 		
-		r_butt_5.whileHeld(new SweepBalls());
+		l_butt_5.whileHeld(new SweepBalls());
 		
-		r_butt_3.whileHeld(new LoadBall());
-		r_trigger.whileHeld(new LaunchBall());
+		l_butt_3.whileHeld(new LaunchBall());
+		l_trigger.whileHeld(new LoadBall());
 		
-		l_butt_3.whenPressed(new OpenGearSystem());
-		l_butt_5.whenPressed(new CloseGearSystem());
+		r_trigger.whileHeld(new OpenGearSystem());
+		r_trigger.whenReleased(new CloseGearSystem());
 	}
 	
 	public Joystick getLeftStick() {
