@@ -6,16 +6,18 @@ import org.usfirst.frc.team5483.robot.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class AllignPeg extends Command{
-	boolean finished = false;
+	private boolean finished = false;
+	//if smaller than its close enough to be good
+	private int closeEnough = 3;
 	public void execute() {
 		//Goes slower as it approaches goal
-		float distance = (CameraReceiver.x-CameraReceiver.middle)/CameraReceiver.camWidth;
+		double distance = (CameraReceiver.x-CameraReceiver.middle)/CameraReceiver.camWidth;
 		Robot.chassis.middleDrive(sqrtNeg(distance));
 		
 		//compare box sizes and turn so they are equal, also slows down as it approaches goal
 		double turnValue = (CameraReceiver.wRight-CameraReceiver.wLeft)/CameraReceiver.camWidth;
 		Robot.chassis.drive(sqrtNeg(turnValue), sqrtNeg(-turnValue));
-		if(distance <= 3 && turnValue <= 3) finished = true;
+		if(distance <= closeEnough/CameraReceiver.camWidth && turnValue <= closeEnough/CameraReceiver.camWidth) finished = true;
 	}
 	
 	private double sqrtNeg(double a) {

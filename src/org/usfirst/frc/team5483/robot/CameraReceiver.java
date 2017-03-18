@@ -3,11 +3,13 @@ package org.usfirst.frc.team5483.robot;
 import java.io.IOException;
 import java.net.*;
 
+import org.usfirst.frc.team5483.robot.constants.Constants;
+
 public class CameraReceiver implements Runnable {
 	public static final int PORT = 7070;
 	public static int x = 0, y = 0, wRight = 0, wLeft = 0;
-	public static final int middle = 300;
-	public static final int camWidth = middle * 2;
+	public static final double middle = Constants.CAMERA_POS/Constants.ROBOT_WIDTH;
+	public static final int camWidth = 600;
 	public static boolean receiving = false;
 	private static Thread t;
 

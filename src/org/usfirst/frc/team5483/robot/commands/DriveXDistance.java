@@ -16,7 +16,7 @@ public class DriveXDistance extends Command {
 	
 	private PIDTuner leftPID;
 	private PIDTuner rightPID;
-	
+	int leftMul = 1, rightMul = 1;
 	public DriveXDistance(double centimeters) {
 		destDistance = centimeters;
 		leftPID = new PIDTuner();
@@ -27,8 +27,8 @@ public class DriveXDistance extends Command {
 	public void execute() {
 		curDistance = (Robot.chassis.getLeftEncoder().getDistance() + Robot.chassis.getRightEncoder().getDistance()) / 2;
 		
-		Robot.chassis.drive( leftPID.pidTuned(destDistance, curDistance, 0.3, 0.0, 0.0), 
-						    rightPID.pidTuned(destDistance, curDistance, 0.3, 0.0, 0.0));
+		Robot.chassis.drive( leftPID.pidTuned(destDistance, curDistance, 0.3, 0.0, 0.0)*leftMul, 
+						    rightPID.pidTuned(destDistance, curDistance, 0.3, 0.0, 0.0)*rightMul);
 	}
 	
 	@Override
@@ -41,5 +41,22 @@ public class DriveXDistance extends Command {
 		
 		return false;
 	}
+
+	public int getLeftMul() {
+		return leftMul;
+	}
+
+	public void setLeftMul(int leftMul) {
+		this.leftMul = leftMul;
+	}
+
+	public int getRightMul() {
+		return rightMul;
+	}
+
+	public void setRightMul(int rightMul) {
+		this.rightMul = rightMul;
+	}
+	
 
 }
