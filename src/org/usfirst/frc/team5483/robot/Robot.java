@@ -1,13 +1,16 @@
 
 package org.usfirst.frc.team5483.robot;
 
-import org.usfirst.frc.team5483.robot.commands.autonomous.*;
-import org.usfirst.frc.team5483.robot.subsystems.BallBrush;
-import org.usfirst.frc.team5483.robot.subsystems.BallShooter;
+import org.usfirst.frc.team5483.robot.commands.autonomous.DoNothing;
+import org.usfirst.frc.team5483.robot.commands.autonomous.DrivePastBaseLine;
+import org.usfirst.frc.team5483.robot.commands.autonomous.LeftStartAuto;
+import org.usfirst.frc.team5483.robot.commands.autonomous.MiddleStartAuto;
+import org.usfirst.frc.team5483.robot.commands.autonomous.RightStartAuto;
 import org.usfirst.frc.team5483.robot.subsystems.Chassis;
 import org.usfirst.frc.team5483.robot.subsystems.Climber;
 import org.usfirst.frc.team5483.robot.subsystems.GearSystem;
 
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -18,12 +21,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	public static Chassis chassis;
 	public static Climber climber;
-	public static BallBrush ballBrush;
-	public static BallShooter ballShooter;
 	public static GearSystem gearSystem;
 	
 	public static OI oi;
-
+	
 	Command autonomousCommand;
 	SendableChooser<Command> chooser = new SendableChooser<>();
 	
@@ -31,16 +32,13 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		chassis = new Chassis();
 		climber = new Climber();
-		ballBrush = new BallBrush();
-		ballShooter = new BallShooter();
 		gearSystem = new GearSystem();
-		new CameraReceiver().start();
+		
+		//new CameraReceiver().start();
 		oi = new OI();
 		
 		SmartDashboard.putData(chassis);
 		SmartDashboard.putData(climber);
-		SmartDashboard.putData(ballBrush);
-		SmartDashboard.putData(ballShooter);
 		SmartDashboard.putData(gearSystem);
 		
 		chooser.addDefault("Do Nothing", new DoNothing());
@@ -64,8 +62,8 @@ public class Robot extends IterativeRobot {
 
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = chooser.getSelected();
-
+		autonomousCommand = new DrivePastBaseLine();
+		
 		if (autonomousCommand != null)
 			autonomousCommand.start();
 	}
@@ -93,7 +91,5 @@ public class Robot extends IterativeRobot {
 	
 	private void log() {
 		chassis.log();
-		ballBrush.log();
-		ballShooter.log();
 	}
 }

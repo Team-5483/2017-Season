@@ -13,6 +13,6 @@ public class RobotMath {
 	public static double sigmoid(double a, double deadZone) {
 		int mul = 1;
 		if(a < 0) mul = -1;
-		return (1 / ( 1 + Math.pow(Math.E,(-8*a*mul + 4))));
+		return mul*(1 / ( 1 + Math.pow(Math.E,(-8*a*mul + 4))));
 	}
 }

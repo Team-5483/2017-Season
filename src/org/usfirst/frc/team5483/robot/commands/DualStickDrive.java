@@ -11,6 +11,7 @@ public class DualStickDrive extends Command {
 	private Joystick leftStick;
 	private Joystick rightStick;
 	public final float forwardDeadZone = 0.015f;
+	
 	public DualStickDrive() {
 		requires(Robot.chassis);
 		
@@ -25,7 +26,7 @@ public class DualStickDrive extends Command {
 	
 	@Override
 	public void execute() {
-		Robot.chassis.drive(RobotMath.sigmoid(-leftStick.getY(),forwardDeadZone), RobotMath.sigmoid(-rightStick.getY(),forwardDeadZone));
+		Robot.chassis.drive(-leftStick.getY(), -rightStick.getY());
 		Robot.chassis.middleDrive(-leftStick.getX()*0.5 + -rightStick.getX()*0.5);
 	}
 	

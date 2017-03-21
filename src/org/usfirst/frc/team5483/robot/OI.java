@@ -1,14 +1,8 @@
 package org.usfirst.frc.team5483.robot;
 
 import org.usfirst.frc.team5483.robot.commands.ClimbRope;
-import org.usfirst.frc.team5483.robot.commands.CloseGearSystem;
-import org.usfirst.frc.team5483.robot.commands.SweepBalls;
-import org.usfirst.frc.team5483.robot.commands.LaunchBall;
-import org.usfirst.frc.team5483.robot.commands.LoadBall;
-import org.usfirst.frc.team5483.robot.commands.OpenGearSystem;
 
 import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class OI {
@@ -35,13 +29,8 @@ public class OI {
 		
 		r_butt_5.whileHeld(new ClimbRope());
 		
-		l_butt_5.whileHeld(new SweepBalls());
-		
-		l_butt_3.whileHeld(new LaunchBall());
-		l_trigger.whileHeld(new LoadBall());
-		
-		r_trigger.whileHeld(new OpenGearSystem());
-		r_trigger.whenReleased(new CloseGearSystem());
+//		r_trigger.whenPressed(new OpenGearSystem());
+//		l_trigger.whenPressed(new CloseGearSystem());
 	}
 	
 	public Joystick getLeftStick() {
