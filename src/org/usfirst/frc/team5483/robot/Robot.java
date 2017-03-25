@@ -1,4 +1,3 @@
-
 package org.usfirst.frc.team5483.robot;
 
 import org.usfirst.frc.team5483.robot.commands.autonomous.DoNothing;
@@ -8,9 +7,7 @@ import org.usfirst.frc.team5483.robot.commands.autonomous.MiddleStartAuto;
 import org.usfirst.frc.team5483.robot.commands.autonomous.RightStartAuto;
 import org.usfirst.frc.team5483.robot.subsystems.Chassis;
 import org.usfirst.frc.team5483.robot.subsystems.Climber;
-import org.usfirst.frc.team5483.robot.subsystems.GearSystem;
 
-import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -21,7 +18,6 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	public static Chassis chassis;
 	public static Climber climber;
-	public static GearSystem gearSystem;
 	
 	public static OI oi;
 	
@@ -32,14 +28,12 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		chassis = new Chassis();
 		climber = new Climber();
-		gearSystem = new GearSystem();
 		
 		//new CameraReceiver().start();
 		oi = new OI();
 		
 		SmartDashboard.putData(chassis);
 		SmartDashboard.putData(climber);
-		SmartDashboard.putData(gearSystem);
 		
 		chooser.addDefault("Do Nothing", new DoNothing());
 		chooser.addObject("Left Start", new LeftStartAuto());

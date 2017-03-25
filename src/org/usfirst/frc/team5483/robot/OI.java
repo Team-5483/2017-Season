@@ -28,9 +28,6 @@ public class OI {
 		JoystickButton r_butt_7 = new JoystickButton( rightStick,  RobotMap.joystick_7);
 		
 		r_butt_5.whileHeld(new ClimbRope());
-		
-//		r_trigger.whenPressed(new OpenGearSystem());
-//		l_trigger.whenPressed(new CloseGearSystem());
 	}
 	
 	public Joystick getLeftStick() {
