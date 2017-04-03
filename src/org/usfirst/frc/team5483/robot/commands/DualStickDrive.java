@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class DualStickDrive extends Command {
-	
 	private Joystick leftStick;
 	private Joystick rightStick;
 	public final float forwardDeadZone = 0.015f;

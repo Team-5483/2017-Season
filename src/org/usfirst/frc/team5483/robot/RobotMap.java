@@ -31,17 +31,7 @@ public class RobotMap {
 	public static int rEncoderA = 0;
 	public static int rEncoderB = 1;
 	
-	//Ball Grabber
-	public static int ballBrush = 8;
-	
-	//Ball Launcher
-	public static int ballShooter = 7;
-	public static int ballLoader = 9;
-	
 	//Climber
 	public static int climber = 6;
 	
-	//Gear System
-	public static int gearSolenoidOpen = 0;
-	public static int gearSolenoidClose = 1;
 }

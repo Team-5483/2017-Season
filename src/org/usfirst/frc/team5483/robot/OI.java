@@ -11,23 +11,17 @@ public class OI {
 	private static Joystick rightStick = new Joystick(RobotMap.rStickPort);
 	
 	public OI() {
-		JoystickButton l_trigger = new JoystickButton(leftStick,   RobotMap.joystick_trigger);
-		JoystickButton l_butt_2 = new JoystickButton( leftStick,   RobotMap.joystick_2);
-		JoystickButton l_butt_3 = new JoystickButton( leftStick,   RobotMap.joystick_3);
-		JoystickButton l_butt_4 = new JoystickButton( leftStick,   RobotMap.joystick_4);
-		JoystickButton l_butt_5 = new JoystickButton( leftStick,   RobotMap.joystick_5);
-		JoystickButton l_butt_6 = new JoystickButton( leftStick,   RobotMap.joystick_6);
-		JoystickButton l_butt_7 = new JoystickButton( leftStick,   RobotMap.joystick_7);
-		
 		JoystickButton r_trigger = new JoystickButton(rightStick,  RobotMap.joystick_trigger);
-		JoystickButton r_butt_2 = new JoystickButton( rightStick,  RobotMap.joystick_2);
+		
 		JoystickButton r_butt_3 = new JoystickButton( rightStick,  RobotMap.joystick_3);
 		JoystickButton r_butt_4 = new JoystickButton( rightStick,  RobotMap.joystick_4);
 		JoystickButton r_butt_5 = new JoystickButton( rightStick,  RobotMap.joystick_5);
-		JoystickButton r_butt_6 = new JoystickButton( rightStick,  RobotMap.joystick_6);
-		JoystickButton r_butt_7 = new JoystickButton( rightStick,  RobotMap.joystick_7);
 		
-		r_butt_5.whileHeld(new ClimbRope());
+		r_butt_4.whileHeld(new ClimbRope(0.2f));
+		r_butt_3.whileHeld(new ClimbRope(0.5f));
+		r_butt_5.whileHeld(new ClimbRope(0.8f));
+
+		r_trigger.whileHeld(new ClimbRope(1.0f));
 	}
 	
 	public Joystick getLeftStick() {

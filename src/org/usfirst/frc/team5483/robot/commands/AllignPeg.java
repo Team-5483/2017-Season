@@ -7,8 +7,10 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class AllignPeg extends Command{
 	private boolean finished = false;
+	
 	//if smaller than its close enough to be good
 	private int closeEnough = 3;
+	
 	public void execute() {
 		//Goes slower as it approaches goal
 		double distance = (CameraReceiver.x-CameraReceiver.middle)/CameraReceiver.camWidth;

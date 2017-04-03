@@ -6,14 +6,16 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.Talon;
 
 public class ClimbRope extends Command {
+	private float speed;
 	
-	public ClimbRope() {
+	public ClimbRope(float speed) {
 		requires(Robot.climber);
+		this.speed = speed;
 	}
 
 	@Override
 	public void execute() {
-		Robot.climber.climbRope();
+		Robot.climber.climbRope(speed);
 	}
 
 	@Override

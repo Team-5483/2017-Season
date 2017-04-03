@@ -29,7 +29,6 @@ public class Robot extends IterativeRobot {
 		chassis = new Chassis();
 		climber = new Climber();
 		
-		//new CameraReceiver().start();
 		oi = new OI();
 		
 		SmartDashboard.putData(chassis);

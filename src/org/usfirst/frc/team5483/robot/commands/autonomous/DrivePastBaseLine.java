@@ -7,22 +7,15 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.command.Command;
 
 public class DrivePastBaseLine extends Command {
-	private DriveXDistance drive;
-	
-	Timer timer;
+	private Timer timer;
 	
 	public DrivePastBaseLine() {
-		//drive = new DriveXDistance(100);
 		timer = new Timer();
 		timer.start();
 	}
 	
 	public void execute() {
-		//drive.execute();
-		
 		Robot.chassis.drive(0.6, 0.6);
-		
-	
 	}
 	
 	protected boolean isFinished() {
